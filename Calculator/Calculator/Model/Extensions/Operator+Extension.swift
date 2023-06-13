@@ -6,6 +6,10 @@
 //
 
 extension Operator: CalculateItem {
+	static var all: [Character] {
+		return Self.allCases.map { $0.rawValue }
+	}
+	
 	func calculate(lhs: Double, rhs: Double) -> Double {
 		switch self {
 		case .add:
