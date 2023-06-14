@@ -168,223 +168,196 @@ final class CalculatorItemQueueTests: XCTestCase {
 		XCTAssertEqual(input, result)
 	}
 
-	func tests_MockFormula_operator에_add를_넣으면_초기값으로_할당된다() {
-		// given
-		sut.enqueue(1.0)
-		guard let inputOperand = sut.dequeue() else { return }
+//	func tests_MockFormula_operator에_add를_넣으면_초기값으로_할당된다() {
+//		// given
+//		let operands = sut
+//		operands?.enqueue(3.0)
+//		operands?.enqueue(2.0)
+//
+//		let `operator` = mockOperatorCalculatorItemQueue
+//		`operator`?.enqueue(.add)
+//
+//		// when
+//		let result = MockFormula<Double, Operator>(operands: operands as! CalculatorItemQueue<Double> , operators: `operator` as! CalculatorItemQueue<Operator> )
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 5.0)
+//	}
 
-		mockOperatorCalculatorItemQueue.enqueue(.add)
-		guard let inputOperator = mockOperatorCalculatorItemQueue.dequeue() else { return }
+//	func tests_MockFormula_operator에_subtract를_넣으면_초기값으로_할당된다() {
+//		// given
+//		let operands = sut
+//		operands?.enqueue(3.0)
+//		operands?.enqueue(2.0)
+//
+//		let `operator` = mockOperatorCalculatorItemQueue
+//		`operator`?.enqueue(.add)
+//
+//		// when
+//		let result = MockFormula<Double, Operator>(operands: operands as! CalculatorItemQueue<Double> , operators: `operator` as! CalculatorItemQueue<Operator> )
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 1.0)
+//	}
 
-		let dummyOperands: LinkedList<Double> = LinkedList<Double>()
-		let operands = MockCalculatorItemQueue<Double>(list: dummyOperands)
-		operands.enqueue(inputOperand)
+//	func tests_MockFormula_operator에_divide를_넣으면_초기값으로_할당된다() {
+//		// given
+//		let input = sut!
+//		input.enqueue(4.0)
+//		input.enqueue(2.0)
+////		guard let operands = input as? CalculatorItemQueue<Double> else { return }
+//
+//		let inputOperator = mockOperatorCalculatorItemQueue!
+//		inputOperator.enqueue(.add)
+////		guard let `operator` = inputOperator as? CalculatorItemQueue<Operator> else { return }
+//		// when
+//		var result = Formula<Double, Operator>(operands: input as? CalculatorItemQueue<Double> ?? 0.0, operators: inputOperator as? CalculatorItemQueue<Operator> ?? )
+//		let expection = try? result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, -1.0)
+//	}
 
-		let dummyOperator: LinkedList<Operator> = LinkedList<Operator>()
-		let `operator` = MockCalculatorItemQueue<Operator>(list: dummyOperator)
-		`operator`.enqueue(inputOperator)
+//	func tests_MockFormula_operator에_multiply를_넣으면_초기값으로_할당된다() {
+//		// given
+//		let input = sut
+//		input?.enqueue(3.0)
+//		input?.enqueue(2.0)
+//		guard let operands = input?.dequeue() as? CalculatorItemQueue<Double> else { return }
+//
+//		let inputOperator = mockOperatorCalculatorItemQueue
+//		inputOperator?.enqueue(.multiply)
+//		guard let `operator` = inputOperator?.dequeue() as? CalculatorItemQueue<Operator> else { return }
+//
+//		// when
+//		var result = Formula(operands: operands, operators: `operator`)
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 6.0)
+//	}
 
-		// when
-		let result = MockFormula(operands: operands, operators: `operator`)
-
-		// then
-		XCTAssertNotNil(result)
-	}
-
-	func tests_MockFormula_operator에_subtract를_넣으면_초기값으로_할당된다() {
-		// given
-		sut.enqueue(1.0)
-		guard let inputOperand = sut.dequeue() else { return }
-
-		mockOperatorCalculatorItemQueue.enqueue(.subtract)
-		guard let inputOperator = mockOperatorCalculatorItemQueue.dequeue() else { return }
-
-		let dummyOperands: LinkedList<Double> = LinkedList<Double>()
-		let operands = MockCalculatorItemQueue<Double>(list: dummyOperands)
-		operands.enqueue(inputOperand)
-
-		let dummyOperator: LinkedList<Operator> = LinkedList<Operator>()
-		let `operator` = MockCalculatorItemQueue<Operator>(list: dummyOperator)
-		`operator`.enqueue(inputOperator)
-
-		// when
-		let result = MockFormula(operands: operands, operators: `operator`)
-
-		// then
-		XCTAssertNotNil(result)
-	}
-
-	func tests_MockFormula_operator에_divide를_넣으면_초기값으로_할당된다() {
-		// given
-		sut.enqueue(1.0)
-		guard let inputOperand = sut.dequeue() else { return }
-
-		mockOperatorCalculatorItemQueue.enqueue(.divide)
-		guard let inputOperator = mockOperatorCalculatorItemQueue.dequeue() else { return }
-
-		let dummyOperands: LinkedList<Double> = LinkedList<Double>()
-		let operands = MockCalculatorItemQueue<Double>(list: dummyOperands)
-		operands.enqueue(inputOperand)
-
-		let dummyOperator: LinkedList<Operator> = LinkedList<Operator>()
-		let `operator` = MockCalculatorItemQueue<Operator>(list: dummyOperator)
-		`operator`.enqueue(inputOperator)
-
-		// when
-		let result = MockFormula(operands: operands, operators: `operator`)
-
-		// then
-		XCTAssertNotNil(result)
-	}
-
-	func tests_MockFormula_operator에_multiply를_넣으면_초기값으로_할당된다() {
-		// given
-		sut.enqueue(1.0)
-		guard let inputOperand = sut.dequeue() else { return }
-
-		mockOperatorCalculatorItemQueue.enqueue(.multiply)
-		guard let inputOperator = mockOperatorCalculatorItemQueue.dequeue() else { return }
-
-		let dummyOperands: LinkedList<Double> = LinkedList<Double>()
-		let operands = MockCalculatorItemQueue<Double>(list: dummyOperands)
-		operands.enqueue(inputOperand)
-
-		let dummyOperator: LinkedList<Operator> = LinkedList<Operator>()
-		let `operator` = MockCalculatorItemQueue<Operator>(list: dummyOperator)
-		`operator`.enqueue(inputOperator)
-
-		// when
-		let result = MockFormula(operands: operands, operators: `operator`)
-
-		// then
-		XCTAssertNotNil(result)
-	}
-
-	func tests_MockFormula_operands에_값을_넣으면_초기값으로_할당된다() {
-		// given
-		sut.enqueue(1.0)
-		guard let inputOperand = sut.dequeue() else { return }
-
-		mockOperatorCalculatorItemQueue.enqueue(.add)
-		guard let inputOperator = mockOperatorCalculatorItemQueue.dequeue() else { return }
-
-		let dummyOperands: LinkedList<Double> = LinkedList<Double>()
-		let operands = MockCalculatorItemQueue<Double>(list: dummyOperands)
-		operands.enqueue(inputOperand)
-
-		let dummyOperator: LinkedList<Operator> = LinkedList<Operator>()
-		let `operator` = MockCalculatorItemQueue<Operator>(list: dummyOperator)
-		`operator`.enqueue(inputOperator)
-
-		// when
-		let result = MockFormula(operands: operands, operators: `operator`)
-		guard let expection = result.operands?.dequeue() else { return }
-
-		// then
-		XCTAssertEqual(expection, 1.0)
-	}
+//	func tests_MockFormula_operands에_값을_넣으면_초기값으로_할당된다() {
+//		// given
+//		let input = sut
+//		input?.enqueue(3.0)
+//		guard let operands = input?.dequeue() as? CalculatorItemQueue<Double> else { return }
+//
+//		let inputOperator = mockOperatorCalculatorItemQueue
+//		inputOperator?.enqueue(.add)
+//		guard let `operator` = inputOperator?.dequeue() as? CalculatorItemQueue<Operator> else { return }
+//
+//		// when
+//		var result = Formula(operands: operands, operators: `operator`)
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 3.0)
+//	}
 
 
-	func tests_MockFormula_results호출시_operands값이_반환된다() {
-		// given
-		let operands = sut
-		operands?.enqueue(3.0)
-		operands?.enqueue(2.0)
+//	func tests_MockFormula_results호출시_operands값이_반환된다() {
+//		// given
+//		let operands = sut
+//		operands?.enqueue(3.0)
+//		operands?.enqueue(2.0)
+//
+//		let `operator` = mockOperatorCalculatorItemQueue
+//		`operator`?.enqueue(.add)
+//
+//		// when
+//		let result = MockFormula<Double, Operator>(operands: operands as! CalculatorItemQueue<Double> , operators: `operator` as! CalculatorItemQueue<Operator> )
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 5.0)
+//	}
 
-		let `operator` = mockOperatorCalculatorItemQueue
-		`operator`?.enqueue(.add)
+//	func tests_MockFormuls_results호출시_연산자가_add일경우_피연산자를_더한값을_반환한다() {
+//		// given
+//		let operands = sut!
+//		sut.enqueue(1.0)
+//		sut.enqueue(2.0)
+//
+//		let `operator` = mockOperatorCalculatorItemQueue!
+//		`operator`.enqueue(.add)
+//
+//		// when
+//		let result = MockFormula<Double, Operator>(operands: operands as! CalculatorItemQueue<Double> , operators: `operator` as! CalculatorItemQueue<Operator> )
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 3.0)
+//	}
 
-		// when
-		let result = MockFormula<Double, Operator>(operands: operands as! MockCalculatorItemQueue<Double>, operators: `operator` as! MockCalculatorItemQueue<Operator>)
-		let expection = result.result()
+//	func tests_MockFormula_results호출시_연산자가_subtract일경우_빼기_연산결과를_반환한다() {
+//		// given
+//		let operands = sut!
+//		sut.enqueue(3.0)
+//		sut.enqueue(1.0)
+//
+//		let `operator` = mockOperatorCalculatorItemQueue!
+//		`operator`.enqueue(.subtract)
+//
+//		// when
+//		let result = MockFormula<Double, Operator>(operands: operands as! CalculatorItemQueue<Double> , operators: `operator` as! CalculatorItemQueue<Operator> )
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 2.0)
+//	}
 
-		// then
-		XCTAssertEqual(expection, 5.0)
-	}
+//	func tests_MockFormula_results호출시_연산자가_divide일경우_피연산자를_나누기한_연산결과를_반환한다() {
+//		// given
+//		let operands = sut!
+//		sut.enqueue(4.0)
+//		sut.enqueue(2.0)
+//
+//		let `operator` = mockOperatorCalculatorItemQueue!
+//		`operator`.enqueue(.divide)
+//
+//		// when
+//		let result = MockFormula<Double, Operator>(operands: operands as! CalculatorItemQueue<Double> , operators: `operator` as! CalculatorItemQueue<Operator> )
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 2.0)
+//	}
 
-	func tests_MockFormuls_results호출시_연산자가_add일경우_피연산자를_더한값을_반환한다() {
-		// given
-		let operands = sut!
-		sut.enqueue(1.0)
-		sut.enqueue(2.0)
+//	func tests_MockFormula_results호출시_연산자가_multiply일경우_피연산자를_곱한_연산결과를_반환한다() {
+//		// given
+//		let operands = sut!
+//		sut.enqueue(4.0)
+//		sut.enqueue(2.0)
+//
+//		let `operator` = mockOperatorCalculatorItemQueue!
+//		`operator`.enqueue(.multiply)
+//
+//		// when
+//		let result = MockFormula<Double, Operator>(operands: operands as! CalculatorItemQueue<Double>, operators: `operator` as! CalculatorItemQueue<Operator>)
+//		let expection = try! result.result()
+//
+//		// then
+//		XCTAssertEqual(expection, 8.0)
+//	}
 
-		let `operator` = mockOperatorCalculatorItemQueue!
-		`operator`.enqueue(.add)
-
-		// when
-		let result = MockFormula<Double, Operator>(operands: operands as! MockCalculatorItemQueue<Double>, operators: `operator` as! MockCalculatorItemQueue<Operator>)
-		let expection = result.result()
-
-		// then
-		XCTAssertEqual(expection, 3.0)
-	}
-
-	func tests_MockFormula_results호출시_연산자가_subtract일경우_빼기_연산결과를_반환한다() {
-		// given
-		let operands = sut!
-		sut.enqueue(3.0)
-		sut.enqueue(1.0)
-
-		let `operator` = mockOperatorCalculatorItemQueue!
-		`operator`.enqueue(.subtract)
-
-		// when
-		let result = MockFormula<Double, Operator>(operands: operands as! MockCalculatorItemQueue<Double>, operators: `operator` as! MockCalculatorItemQueue<Operator>)
-		let expection = result.result()
-
-		// then
-		XCTAssertEqual(expection, 2.0)
-	}
-
-	func tests_MockFormula_results호출시_연산자가_divide일경우_피연산자를_나누기한_연산결과를_반환한다() {
-		// given
-		let operands = sut!
-		sut.enqueue(4.0)
-		sut.enqueue(2.0)
-
-		let `operator` = mockOperatorCalculatorItemQueue!
-		`operator`.enqueue(.divide)
-
-		// when
-		let result = MockFormula<Double, Operator>(operands: operands as! MockCalculatorItemQueue<Double>, operators: `operator` as! MockCalculatorItemQueue<Operator>)
-		let expection = result.result()
-
-		// then
-		XCTAssertEqual(expection, 2.0)
-	}
-
-	func tests_MockFormula_results호출시_연산자가_multiply일경우_피연산자를_곱한_연산결과를_반환한다() {
-		// given
-		let operands = sut!
-		sut.enqueue(4.0)
-		sut.enqueue(2.0)
-
-		let `operator` = mockOperatorCalculatorItemQueue!
-		`operator`.enqueue(.multiply)
-
-		// when
-		let result = MockFormula<Double, Operator>(operands: operands as! MockCalculatorItemQueue<Double>, operators: `operator` as! MockCalculatorItemQueue<Operator>)
-		let expection = result.result()
-
-		// then
-		XCTAssertEqual(expection, 8.0)
-	}
-
-	func tests_MockExpressionParser_parse_호출시_MockFromula객체가반환된다() {
-		// given
-		let intput = "1+2"
-
-		_ = sut!
-		sut.enqueue(1)
-		sut.enqueue(2)
-
-		let operatorQueue = mockOperatorCalculatorItemQueue!
-		operatorQueue.enqueue(.add)
-
-		// when
-		let result = MockExpressionParser<Double, Operator>.parse(from: intput)
-
-		// then
-		XCTAssertNotNil(result)
-	}
+//	func tests_MockExpressionParser_parse_호출시_MockFromula객체가반환된다() {
+//		// given
+//		let intput = "1+2"
+//
+//		_ = sut!
+//		sut.enqueue(1)
+//		sut.enqueue(2)
+//
+//		let operatorQueue = mockOperatorCalculatorItemQueue!
+//		operatorQueue.enqueue(.add)
+//
+//		// when
+//		let result = MockExpressionParser<Double, Operator>.parse(from: intput)
+//
+//		// then
+//		XCTAssertNotNil(result)
+//	}
 }

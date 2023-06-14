@@ -10,5 +10,5 @@ protocol FormulaProtocol {
 	associatedtype U: CalculateItem
 	var operands: CalculatorItemQueue<T> { get }
 	var operators: CalculatorItemQueue<U> { get }
-	func result() -> Double
+	mutating func result() throws -> Double
 }

@@ -6,11 +6,12 @@
 //
 
 enum MockExpressionParser<T: CalculateItem, U: CalculateItem> {	
-	static func parse(from input: String) -> MockFormula<Double, Operator> {
+	static func parse(from input: String) -> Formula<Double, Operator> {
 		let operandsLinkedList = LinkedList<Double>()
+		let operandQueue = CalculatorItemQueue(list: operandsLinkedList)
+		
 		let operatorsLinkedList = LinkedList<Operator>()
-		let operandQueue = MockCalculatorItemQueue(list: operandsLinkedList)
-		let operatorQueue = MockCalculatorItemQueue(list: operatorsLinkedList)
+		let operatorQueue = CalculatorItemQueue(list: operatorsLinkedList)
 		
 		let operands = componentsByOperators(from: input).compactMap { Double($0) }
 		operands.forEach {
@@ -24,12 +25,12 @@ enum MockExpressionParser<T: CalculateItem, U: CalculateItem> {
 			operatorQueue.enqueue(`operator`)
 		}
 		
-		let result = MockFormula(operands: operandQueue, operators: operatorQueue)
+		let formulaResult = Formula(operands: operandQueue, operators: operatorQueue)
 		
-		return result
+		return formulaResult
 	}
 	
-	static func componentsByOperators(from input: String) -> [String] {
+	static private func componentsByOperators(from input: String) -> [String] {
 		let operatorList = Operator.allCases.compactMap { $0.rawValue }
 		
 		let expression = operatorList.reduce([input]) { partialResult, `operator` in

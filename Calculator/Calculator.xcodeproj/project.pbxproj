@@ -21,6 +21,7 @@
 		BA282E342A2EC0790041F75F /* MockOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA282E332A2EC0790041F75F /* MockOperator.swift */; };
 		BA896C342A2FF28800AD8807 /* MockExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA896C332A2FF28800AD8807 /* MockExpressionParser.swift */; };
 		BAA363A82A2AF496009286EF /* DummyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA363A72A2AF496009286EF /* DummyNode.swift */; };
+		BACE364A2A3910390026FBC7 /* CalculationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE36492A3910390026FBC7 /* CalculationError.swift */; };
 		BADC08062A2D1B17000B5757 /* MockLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC08052A2D1B17000B5757 /* MockLinkedList.swift */; };
 		BAED15002A29E3D600FBE18E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAED14FF2A29E3D600FBE18E /* Node.swift */; };
 		BAED15022A29E44D00FBE18E /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAED15012A29E44D00FBE18E /* LinkedList.swift */; };
@@ -61,6 +62,7 @@
 		BA282E332A2EC0790041F75F /* MockOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOperator.swift; sourceTree = "<group>"; };
 		BA896C332A2FF28800AD8807 /* MockExpressionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExpressionParser.swift; sourceTree = "<group>"; };
 		BAA363A72A2AF496009286EF /* DummyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNode.swift; sourceTree = "<group>"; };
+		BACE36492A3910390026FBC7 /* CalculationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationError.swift; sourceTree = "<group>"; };
 		BADC08052A2D1B17000B5757 /* MockLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLinkedList.swift; sourceTree = "<group>"; };
 		BAED14FF2A29E3D600FBE18E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		BAED15012A29E44D00FBE18E /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
@@ -133,9 +135,18 @@
 			path = TestDouble;
 			sourceTree = "<group>";
 		};
+		BACE36482A3910190026FBC7 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				BACE36492A3910390026FBC7 /* CalculationError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		BAFFB98E2A2599AA000FBBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BACE36482A3910190026FBC7 /* Error */,
 				BA24C9C52A32AD740030E7BB /* Extensions */,
 				BA24C9BE2A32ABBA0030E7BB /* Protocols */,
 				BAFFB9942A25D243000FBBFA /* CalculatorItemQueue.swift */,
@@ -333,6 +344,7 @@
 			files = (
 				BAED153F2A2A84BE00FBE18E /* MockCalculatorItemQueue.swift in Sources */,
 				BAED153D2A2A844000FBE18E /* CalculateItemProtocol.swift in Sources */,
+				BACE364A2A3910390026FBC7 /* CalculationError.swift in Sources */,
 				BA24C9C72A32ADE10030E7BB /* Double+Extension.swift in Sources */,
 				BA282E2A2A2EA1150041F75F /* Formula.swift in Sources */,
 				BA282E342A2EC0790041F75F /* MockOperator.swift in Sources */,
