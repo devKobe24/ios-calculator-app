@@ -22,6 +22,12 @@
 		BA896C342A2FF28800AD8807 /* MockExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA896C332A2FF28800AD8807 /* MockExpressionParser.swift */; };
 		BAA363A82A2AF496009286EF /* DummyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA363A72A2AF496009286EF /* DummyNode.swift */; };
 		BACE364A2A3910390026FBC7 /* CalculationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE36492A3910390026FBC7 /* CalculationError.swift */; };
+		BACE364C2A39B6330026FBC7 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE364B2A39B6330026FBC7 /* UILabel+Extension.swift */; };
+		BACE36512A39CBDD0026FBC7 /* CalculateNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE36502A39CBDD0026FBC7 /* CalculateNamespace.swift */; };
+		BACE36532A39E03A0026FBC7 /* ButtonTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE36522A39E03A0026FBC7 /* ButtonTypeEnum.swift */; };
+		BACE36572A39ED590026FBC7 /* OperandFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE36562A39ED590026FBC7 /* OperandFormatter.swift */; };
+		BACE36592A3A59370026FBC7 /* CalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE36582A3A59370026FBC7 /* CalculatorManager.swift */; };
+		BACE365B2A3A690B0026FBC7 /* ExpressionValueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE365A2A3A690B0026FBC7 /* ExpressionValueParser.swift */; };
 		BADC08062A2D1B17000B5757 /* MockLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADC08052A2D1B17000B5757 /* MockLinkedList.swift */; };
 		BAED15002A29E3D600FBE18E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAED14FF2A29E3D600FBE18E /* Node.swift */; };
 		BAED15022A29E44D00FBE18E /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAED15012A29E44D00FBE18E /* LinkedList.swift */; };
@@ -63,6 +69,12 @@
 		BA896C332A2FF28800AD8807 /* MockExpressionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExpressionParser.swift; sourceTree = "<group>"; };
 		BAA363A72A2AF496009286EF /* DummyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNode.swift; sourceTree = "<group>"; };
 		BACE36492A3910390026FBC7 /* CalculationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationError.swift; sourceTree = "<group>"; };
+		BACE364B2A39B6330026FBC7 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		BACE36502A39CBDD0026FBC7 /* CalculateNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateNamespace.swift; sourceTree = "<group>"; };
+		BACE36522A39E03A0026FBC7 /* ButtonTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypeEnum.swift; sourceTree = "<group>"; };
+		BACE36562A39ED590026FBC7 /* OperandFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperandFormatter.swift; sourceTree = "<group>"; };
+		BACE36582A3A59370026FBC7 /* CalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorManager.swift; sourceTree = "<group>"; };
+		BACE365A2A3A690B0026FBC7 /* ExpressionValueParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionValueParser.swift; sourceTree = "<group>"; };
 		BADC08052A2D1B17000B5757 /* MockLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLinkedList.swift; sourceTree = "<group>"; };
 		BAED14FF2A29E3D600FBE18E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		BAED15012A29E44D00FBE18E /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
@@ -117,6 +129,7 @@
 				BA282E312A2EB8100041F75F /* String+Extension.swift */,
 				BA24C9C62A32ADE10030E7BB /* Double+Extension.swift */,
 				BA24C9C82A32AE620030E7BB /* Operator+Extension.swift */,
+				BACE364B2A39B6330026FBC7 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,9 +156,21 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		BACE364F2A39CBB10026FBC7 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				BACE36502A39CBDD0026FBC7 /* CalculateNamespace.swift */,
+				BACE36522A39E03A0026FBC7 /* ButtonTypeEnum.swift */,
+				BACE36562A39ED590026FBC7 /* OperandFormatter.swift */,
+				BACE365A2A3A690B0026FBC7 /* ExpressionValueParser.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		BAFFB98E2A2599AA000FBBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BACE364F2A39CBB10026FBC7 /* Enum */,
 				BACE36482A3910190026FBC7 /* Error */,
 				BA24C9C52A32AD740030E7BB /* Extensions */,
 				BA24C9BE2A32ABBA0030E7BB /* Protocols */,
@@ -155,6 +180,7 @@
 				BA282E272A2E9FD00041F75F /* ExpressionParser.swift */,
 				BA282E292A2EA1150041F75F /* Formula.swift */,
 				BA282E2F2A2EB5E90041F75F /* Operator.swift */,
+				BACE36582A3A59370026FBC7 /* CalculatorManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACE36572A39ED590026FBC7 /* OperandFormatter.swift in Sources */,
 				BAED153F2A2A84BE00FBE18E /* MockCalculatorItemQueue.swift in Sources */,
 				BAED153D2A2A844000FBE18E /* CalculateItemProtocol.swift in Sources */,
 				BACE364A2A3910390026FBC7 /* CalculationError.swift in Sources */,
@@ -349,22 +376,27 @@
 				BA282E2A2A2EA1150041F75F /* Formula.swift in Sources */,
 				BA282E342A2EC0790041F75F /* MockOperator.swift in Sources */,
 				BA24C9C02A32ABDB0030E7BB /* LinkedListProtocol.swift in Sources */,
+				BACE36592A3A59370026FBC7 /* CalculatorManager.swift in Sources */,
 				BAED15022A29E44D00FBE18E /* LinkedList.swift in Sources */,
 				BA24C9C92A32AE620030E7BB /* Operator+Extension.swift in Sources */,
 				BA072D0F2A36D4CB006C7F9B /* Queueable.swift in Sources */,
 				BA282E2C2A2EA7330041F75F /* MockFormula.swift in Sources */,
 				BA896C342A2FF28800AD8807 /* MockExpressionParser.swift in Sources */,
+				BACE36512A39CBDD0026FBC7 /* CalculateNamespace.swift in Sources */,
 				BA24C9C42A32AD0F0030E7BB /* FormulaProtocol.swift in Sources */,
 				C713D9462570E5EB001C3AFC /* ViewController.swift in Sources */,
 				BA24C9C22A32AC7F0030E7BB /* CalculateItem.swift in Sources */,
 				BAA363A82A2AF496009286EF /* DummyNode.swift in Sources */,
 				BAED15002A29E3D600FBE18E /* Node.swift in Sources */,
+				BACE364C2A39B6330026FBC7 /* UILabel+Extension.swift in Sources */,
 				BAFFB9952A25D243000FBBFA /* CalculatorItemQueue.swift in Sources */,
 				C713D9422570E5EB001C3AFC /* AppDelegate.swift in Sources */,
 				BADC08062A2D1B17000B5757 /* MockLinkedList.swift in Sources */,
 				BA282E302A2EB5E90041F75F /* Operator.swift in Sources */,
 				BA282E282A2E9FD00041F75F /* ExpressionParser.swift in Sources */,
 				BA282E322A2EB8100041F75F /* String+Extension.swift in Sources */,
+				BACE365B2A3A690B0026FBC7 /* ExpressionValueParser.swift in Sources */,
+				BACE36532A39E03A0026FBC7 /* ButtonTypeEnum.swift in Sources */,
 				C713D9442570E5EB001C3AFC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
